@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vargav Mishra Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(34, 34, 99);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+            font-size: 1.09rem;
+        }
+
+        main hr {
+            border: 0;
+            background-color: rgb(157, 88, 222);
+            height: 1px;
+            margin: 60px 84px;
+
+        }
+
+        .left {
+            font-size: 1.7rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 140px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+
+        }
+
+        .leftSection {
+            font-size: 2rem;
+
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .leftSection .btn {
+            --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+            --border-width: 0.125em;
+            --curve-size: 0.5em;
+            --blur: 30px;
+            --bg: #080312;
+            --color: #afffff;
+            color: var(--color);
+            cursor: pointer;
+            /* use position: relative; so that BG is only for .btn */
+            position: relative;
+            isolation: isolate;
+            display: inline-grid;
+            place-content: center;
+            padding: 0.5em 1.5em;
+            font-size: 17px;
+            border: 0;
+            text-transform: uppercase;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            clip-path: polygon(
+                    /* Top-left */
+                    0% var(--curve-size),
+                    var(--curve-size) 0,
+                    /* top-right */
+                    100% 0,
+                    100% calc(100% - var(--curve-size)),
+                    /* bottom-right 1 */
+                    calc(100% - var(--curve-size)) 100%,
+                    /* bottom-right 2 */
+                    0 100%);
+            transition: color 250ms;
+        }
+
+        .btn::after,
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+
+        .btn::before {
+            background: var(--border-color);
+            background-size: 300% 300%;
+            animation: move-bg7234 5s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes move-bg7234 {
+            0% {
+                background-position: 31% 0%;
+            }
+
+            50% {
+                background-position: 70% 100%;
+            }
+
+            100% {
+                background-position: 31% 0%;
+            }
+        }
+
+        .btn::after {
+            background: var(--bg);
+            z-index: -1;
+            clip-path: polygon(
+                    /* Top-left */
+                    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+                    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+                    /* top-right */
+                    calc(100% - var(--border-width)) var(--border-width),
+                    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                    /* bottom-right 1 */
+                    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                    /* bottom-right 2 */
+                    var(--border-width) calc(100% - var(--border-width)));
+            transition: clip-path 500ms;
+        }
+
+        .btn:where(:hover, :focus)::after {
+            clip-path: polygon(
+                    /* Top-left */
+                    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                    calc(100% - var(--border-width)) var(--border-width),
+                    /* top-right */
+                    calc(100% - var(--border-width)) var(--border-width),
+                    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                    /* bottom-right 1 */
+                    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                    /* bottom-right 2 */
+                    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+            transition: 200ms;
+        }
+
+        .btn:where(:hover, :focus) {
+            color: #fff;
+        }
+
+        /* .leftSection .btn {
+            padding: 12px;
+            background-color: rgb(34, 34, 99);
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            animation: ;
+
+        } */
+
+        .rightSection img {
+            width: 80%;
+            /* margin: 50px 0; */
+        }
+
+        .purple {
+            color: rgb(157, 88, 222);
+        }
+
+        .text-gray {
+            color: grey;
+        }
+
+        #element {
+            color: rgb(157, 88, 222);
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondsection h1 {
+            font: 1.9rem;
+        }
+
+        .secondsection .box {
+            background: white;
+            width: 77vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondsection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        .image_top {
+            width: 63px;
+            position: relative;
+            top: -53px;
+            left: -29px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 29px;
+            width: 150px;
+        }
+
+        .year {
+            position: relative;
+            top: 30px;
+            width: 120px;
+            font-size: 9px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 50px;
+            color: gray;
+            width: 150px;
+            font-size: 11px;
+        }
+
+        footer {
+            background-color: rgb(34, 34, 99);
+
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer div {
+            width: 220px;
+        }
+
+        footer .footer_rights {
+            text-align: center;
+            color: gray;
+            padding: 12px;
+        }
+
+        .inspired {
+            text-align: center;
+            font-size: 8px;
+            color: rgb(86, 84, 84);
+        }
+
+        .link h4 a {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 5px;
+            color: gray;
+        }
+
+        .text_animation {
+            background: linear-gradient(to right,
+                    #7953cd 20%,
+                    #00affa 30%,
+                    #0190cd 70%,
+                    #764ada 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            background-size: 500% auto;
+            animation: textShine 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes textShine {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Vargav's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <span class="text_animation">Hi,</span>
+                My name is <span class="text_animation"">Vargav</span>
+
+                <div>and I am a passionate</div>
+                <div>Web Developer</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">Download Resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
+
+
+            </div>
+            <div class="rightSection">
+                <img src="bg.png" alt="">
+            </div>
+        </section>
+
+        <hr>
+        <section class="secondsection">
+            <span class="text-gray">What I have done so far</span>
+            <h1> Project Experience</h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <img class="image_top" src="collegepro.png" alt="">
+                    <div class="vertical-title">College Project</div>
+                    <div class="year">(2025-202?)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolore quos fuga provident
+                        voluptate enim consectetur nemo minima sed repellat quia asperiores veritatis corporis error,
+                        quidem consequuntur nesciunt sequi maiores.
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="vertical">
+                    <img class="image_top" src="collegepro.png" alt="">
+                    <div class="vertical-title">
+                        Project 1</div>
+                    <div class="year">(2025-202?)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolore quos fuga provident
+                        voluptate enim consectetur nemo minima sed repellat quia asperiores veritatis corporis error,
+                        quidem consequuntur nesciunt sequi maiores.
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="vertical">
+                    <img class="image_top" src="collegepro.png" alt="">
+                    <div class="vertical-title">Project 2</div>
+                    <div class="year">(2025-202?)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolore quos fuga provident
+                        voluptate enim consectetur nemo minima sed repellat quia asperiores veritatis corporis error,
+                        quidem consequuntur nesciunt sequi maiores.
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="vertical">
+                    <img class="image_top" src="collegepro.png" alt="">
+                    <div class="vertical-title">Project 3</div>
+                    <div class="year">(2025-202?)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolore quos fuga provident
+                        voluptate enim consectetur nemo minima sed repellat quia asperiores veritatis corporis error,
+                        quidem consequuntur nesciunt sequi maiores.
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="vertical">
+                    <img class="image_top" src="collegepro.png" alt="">
+                    <div class="vertical-title">Project 4</div>
+                    <div class="year">(2025-202?)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolore quos fuga provident
+                        voluptate enim consectetur nemo minima sed repellat quia asperiores veritatis corporis error,
+                        quidem consequuntur nesciunt sequi maiores.
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer_first">
+                <h3>Vargav's Developer Portfolio</h3>
+            </div>
+            <div class="footer_second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Project</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer_third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Project</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer_fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Project</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="footer_rights">
+            Copyright &copy; vargavportfolio.com | All rights reserved
+        </div>
+
+        <div class="inspired">
+            <h4>Demo Website made from watching CodewithHarry Youtube video</h4>
+        </div>
+
+        <div class="link">
+            <h4><a href="https://youtu.be/oFnIe-RpkE4?si=WItcKOQDoV8vmRok" target="_blank">CodewithHarryVideoLink</a>
+            </h4>
+        </div>
+
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element',
+            {
+                strings: ['OOPS Developer.', 'Full Stack Developer.', 'Front-End Developer.', 'SEO Expert.'],
+                typeSpeed: 50,
+                backSpeed: 50,
+                backDelay: 1000,
+                loop: true,
+                loopCount: Infinity,
+                smartBackspace: false,
+                shuffle: false
+            });
+    </script>
+</body>
+
+</html>
