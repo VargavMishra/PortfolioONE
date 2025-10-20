@@ -411,7 +411,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
             background-size: 500% auto;
             animation: textShine 5s ease-in-out infinite alternate;
         }
@@ -429,6 +428,16 @@
         @media screen and (max-width: 1400px) {
             .secondsection .box {
                 width: 85vw;
+            }
+
+            .vertical-title,
+            .vertical-desc,
+            .year {
+                position: relative;
+                top: 50px;
+                color: gray;
+                width: 90px;
+                font-size: 11px;
             }
 
             .secondsection .vertical {
@@ -476,9 +485,11 @@
             .vertical-title,
             .vertical-desc,
             .year {
-                left: 0;
-                text-align: center;
-                margin: auto;
+                position: relative;
+                top: 50px;
+                color: gray;
+                width: 150px;
+                font-size: 11px;
             }
         }
 
@@ -515,30 +526,30 @@
                 text-align: center;
                 margin: auto;
             }
-        
 
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
 
-        .secondsection {
-            height: auto;
-            margin-bottom: 50px;
-        }
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
 
-        .footer {
-            flex-direction: column;
-            padding: 20px;
-            gap: 20px;
-            text-align: center;
-        }
+            .secondsection {
+                height: auto;
+                margin-bottom: 50px;
+            }
 
-        .footer div {
-            width: 100%;
-        }
+            .footer {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer div {
+                width: 100%;
+            }
         }
 
         @media screen and (max-width: 400px) {
@@ -576,6 +587,259 @@
                 font-size: 8px;
             }
         }
+
+        /* about section */
+
+        .introduction {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+        }
+
+        .introduction p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .introduction strong {
+            color: rgb(157, 88, 222);
+        }
+
+        .aboutSection {
+            max-width: 80vw;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .aboutSection h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .aboutContent {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .education-skills-container {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .education-skills-container .education,
+        .education-skills-container .skills {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .skills {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .education h2,
+        .skills h2 {
+            color: rgb(157, 88, 222);
+            margin-bottom: 20px;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+        }
+
+        .education-item h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: gray;
+            font-size: 0.9rem;
+        }
+
+        .skills ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            list-style: none;
+        }
+
+        .skills li {
+            background: rgba(157, 88, 222, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            .aboutContent {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* About Section Responsive */
+            .aboutSection {
+                max-width: 95vw;
+                margin: 50px auto;
+                padding: 10px;
+            }
+
+            .aboutSection h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .introduction p {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .education-skills-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .education,
+            .skills {
+                padding: 15px;
+            }
+
+            .education h3 {
+                font-size: 1rem;
+            }
+
+            .education p {
+                font-size: 0.8rem;
+            }
+
+            .skills ul {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .skills li {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+
+            /* Footer Responsive */
+            .footer {
+                padding: 20px 10px;
+            }
+
+            .footer_first h3 {
+                font-size: 1rem;
+            }
+
+            .footer_third ul li,
+            .footer_fourth ul li {
+                font-size: 0.9rem;
+                margin: 8px 0;
+            }
+
+            /* Navigation Responsive */
+            nav {
+                padding: 10px;
+            }
+
+            .left {
+                font-size: 1.2rem;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            /* First Section Responsive */
+            .firstSection {
+                margin: 30px 0;
+            }
+
+            .leftSection {
+                font-size: 1.4rem;
+                padding: 0 15px;
+            }
+
+            .buttons {
+                gap: 15px;
+            }
+
+            .btn1,
+            .btn2 {
+                font-size: 14px;
+                padding: 0.4em 1.2em;
+            }
+
+            /* Second Section Responsive */
+            .secondsection {
+                max-width: 95vw;
+                margin-bottom: 30px;
+            }
+
+            .vertical-title {
+                font-size: 0.9rem;
+            }
+
+            .vertical-desc {
+                font-size: 0.8rem;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .image_top {
+                width: 50px;
+            }
+
+        @media screen and (max-width: 1024px) {
+                .secondsection .box {
+                    background: transparent;
+                    width: 85vw;
+                    height: auto;
+                    margin: 30px 0;
+                }
+
+                .secondsection .vertical {
+                    background: rgba(255, 255, 255, 0.05);
+                    /* Add subtle background to each project card */
+                    padding: 20px;
+                    border-radius: 8px;
+                    margin: 20px 0;
+                }
+
+                .vertical-title,
+                .vertical-desc {
+                    position: relative;
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .year {
+                    position: relative;
+                    width: auto;
+                    margin: 5px 0;
+                }
+
+                .image_top {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin-bottom: 15px;
+                }
+            }
+        }
     </style>
 </head>
 
@@ -603,9 +867,11 @@
                 <div>Web Developer</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <a href="assets/VargavMishraResume.pdf" download class="btn1" style="text-decoration: none;">Download Resume</a>
+                    <a href="assets/VargavMishraResume.pdf" download class="btn1"
+                        style="text-decoration: none;">Download Resume</a>
                     <!-- <button class="btn2">Visit Github</button> -->
-                    <a href="https://github.com/VargavMishra" class="btn2" style="text-decoration: none;">Visit Github </a>
+                    <a href="https://github.com/VargavMishra" class="btn2" style="text-decoration: none;">Visit Github
+                    </a>
                 </div>
 
 
@@ -614,6 +880,62 @@
                 <img src="bg.png" alt="">
             </div>
         </section>
+
+        <hr>
+        <section class="aboutSection">
+            <h1>About <span class="purple">Me</span></h1>
+            <div class="aboutContent">
+                <div class="introduction">
+                    <p>
+                        I am a passionate <strong>Computer Science student</strong> with a focus on web development and
+                        software engineering.
+                        Completed my B.Tech at Silicon Institute of Technology, I combine academic excellence
+                        with practical
+                        project experience. I specialize in <strong>full-stack development</strong>, with expertise in
+                        both front-end and
+                        back-end technologies. My goal is to create innovative solutions that make a meaningful impact.
+                    </p>
+                </div>
+
+                <div class="education-skills-container">
+                    <!-- <h2>Education</h2> -->
+                    <div class="education">
+                        <h3>Bachelor of Technology in Computer Science</h3>
+                        <p>Silicon Institute Of Technology(2021-2025)</p>
+                        <p>CGPA: 7.9 </p>
+                    </div>
+                    <div class="education">
+                        <h3>Higher Secondary Education</h3>
+                        <p>Guru Nank Public School(2021)</p>
+                        <p>Percentage: 76%</p>
+                    </div>
+                    <div class="education">
+                        <h3>Secondary Education</h3>
+                        <p>St.John's School (2019)</p>
+                        <p>Percentage: 81%</p>
+                    </div>
+                </div>
+
+
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>HTML5/CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Core Java</li>
+                        <li>SQL</li>
+                        <li>Git/GitHub</li>
+                        <!-- <li>RESTful APIs</li> -->
+                        <!-- <li>MongoDB</li> -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- <hr> -->
+
 
         <hr>
         <section class="secondsection">
@@ -696,27 +1018,30 @@
             <div class="footer_first">
                 <h3>Vargav's Developer Portfolio</h3>
             </div>
-            <div class="footer_second">
+            <!-- <div class="footer_second">
                 <ul>
                     <li>Home</li>
                     <li>About</li>
                     <li>Project</li>
                     <li>Contact</li>
                 </ul>
-            </div>
+            </div> -->
             <div class="footer_third">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Project</li>
+                    <li><a href="mailto:vargavmishra2002@gmail.com" style="text-decoration: none; color: white;">Email
+                            Me</li>
+                    <li><a href="https://www.linkedin.com/in/vargav-mishra-519108230/"
+                            style="text-decoration: none; color: white;">LinkedIn</a></li>
+                    <li>(773) 501-5524</li>
                     <li>Contact</li>
                 </ul>
             </div>
+
             <div class="footer_fourth">
                 <ul>
                     <li>Home</li>
                     <li>About</li>
-                    <li>Project</li>
+                    <li>Projects</li>
                     <li>Contact</li>
                 </ul>
             </div>
@@ -727,14 +1052,14 @@
             Copyright &copy; vargavportfolio.com | All rights reserved
         </div>
 
-        <div class="inspired">
-            <h4>Demo Website made from watching CodewithHarry Youtube video</h4>
-        </div>
+        <!-- <div class="inspired">
+            <h4>Website made from watching CodewithHarry Youtube video</h4>
+        </div> -->
 
-        <div class="link">
+        <!-- <div class="link">
             <h4><a href="https://youtu.be/oFnIe-RpkE4?si=WItcKOQDoV8vmRok" target="_blank">CodewithHarryVideoLink</a>
             </h4>
-        </div>
+        </div> -->
 
     </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
