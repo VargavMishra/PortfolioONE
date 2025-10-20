@@ -844,6 +844,76 @@
                 }
             }
         }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background: rgba(34, 34, 99, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-bar {
+            width: 35px;
+            height: 3px;
+            margin: 12px 0;
+            position: relative;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .menu-bar span {
+            position: absolute;
+            right: 45px;
+            top: -8px;
+            opacity: 0;
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s ease-in-out;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .menu-bar:hover {
+            background: rgb(157, 88, 222);
+            transform: translateX(-5px);
+        }
+
+        .mobile-menu.active {
+            background: rgba(34, 34, 99, 0.98);
+        }
+
+        .mobile-menu.active .menu-bar {
+            background: rgb(157, 88, 222);
+            width: 120px;
+        }
+
+        .mobile-menu.active .menu-bar span {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .mobile-menu.active .menu-bar:hover {
+            transform: translateX(-3px);
+            background: rgb(177, 108, 242);
+        }
+
+        @media screen and (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav .right {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -851,6 +921,20 @@
     <header>
         <nav>
             <div class="left"><a href="#home" style="color:white; text-decoration:none;">Vargav's Portfolio</a></div>
+            <div class="mobile-menu">
+                <div class="menu-bar" onclick="location.href='#home'">
+                    <span>Home</span>
+                </div>
+                <div class="menu-bar" onclick="location.href='#about'">
+                    <span>About</span>
+                </div>
+                <div class="menu-bar" onclick="location.href='#projects'">
+                    <span>Projects</span>
+                </div>
+                <div class="menu-bar" onclick="location.href='#contact'">
+                    <span>Contact</span>
+                </div>
+            </div>
             <div class="right">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -1080,7 +1164,11 @@
                 shuffle: false
             });
     </script>
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
-
